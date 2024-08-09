@@ -51,11 +51,11 @@ export function Form ({
                     height: '0',
                     overflow: 'hidden',
                 }}>
-                    <label for='id_domain_value'>Identifier</label>
+                    <label htmlFor='id_domain_value'>Identifier</label>
                     <input id='id_domain_value' name='id_domain_value' type='text'></input>
                 </div>
                 <div>
-                    <label for='domain'>Domain</label>
+                    <label htmlFor='domain'>Domain</label>
                     <select id='domain' name='domain'>
                         <option value='detail'>Detail</option>
                         <option value='work'>Work</option>
@@ -63,15 +63,15 @@ export function Form ({
                     </select>
                 </div>
                 <div>
-                    <label for='key'>Key</label>
+                    <label htmlFor='key'>Key</label>
                     <input id='key' name='key' type='text' />
                 </div>
                 <div>
-                    <label for='label'>Label</label>
+                    <label htmlFor='label'>Label</label>
                     <input id='label' name='label' type='text' />
                 </div>
                 <div>
-                    <label for='description'>Description</label>
+                    <label htmlFor='description'>Description</label>
                     <textarea id='description' name='description' />
                 </div>
                 <button type='submit'>Submit</button>

@@ -16,15 +16,15 @@ export function Form ({
     return (
         <form action={handleSubmit}>
             <div>
-                <label for='name_first'>First Name</label>
+                <label htmlFor='name_first'>First Name</label>
                 <input id='name_first' name='name_first' type='text'></input>
             </div>
             <div>
-                <label for='name_middle'>Middle Name</label>
+                <label htmlFor='name_middle'>Middle Name</label>
                 <input id='name_middle' name='name_middle' type='text'></input>
             </div>
             <div>
-                <label for='name_last'>Last Name</label>
+                <label htmlFor='name_last'>Last Name</label>
                 <input id='name_last' name='name_last' type='text'></input>
             </div>
             <button type='submit'>Submit</button>

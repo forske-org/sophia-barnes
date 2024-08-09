@@ -26,7 +26,7 @@ export function Form ({
     return (
         <form action={handleSubmit}>
             <div>
-                <label for='author'>Author</label>
+                <label htmlFor='author'>Author</label>
                 <select id='author' name='author'>
                     {authorList.map((author) =>
                         <option key={author.ID_PERSON} value={author.ID_PERSON}>{author.NAME_FIRST} {author.NAME_LAST}</option>
@@ -35,19 +35,19 @@ export function Form ({
             </div>
             <button onClick={() => setForm('person')}>Author not listed</button>
             <div>
-                <label for='type'>Type</label>
+                <label htmlFor='type'>Type</label>
                 <input id='type' name='type' type='text'></input>
             </div>
             <div>
-                <label for='date'>Date</label>
+                <label htmlFor='date'>Date</label>
                 <input id='date' name='date' type='text'></input>
             </div>
             <div>
-                <label for='image'>Image</label>
+                <label htmlFor='image'>Image</label>
                 <input id='image' name='image' type='text'></input>
             </div>
             <div>
-                <label for='url'>Url</label>
+                <label htmlFor='url'>Url</label>
                 <input id='url' name='url' type='text'></input>
             </div>
 

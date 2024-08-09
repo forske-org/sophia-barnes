@@ -21,7 +21,7 @@ export function Form ({
     return (
         <form action={handleSubmit}>
             <div>
-                <label for='type'>Type</label>
+                <label htmlFor='type'>Type</label>
                 <select id='type' name='type'>
                     <option value=''>-- Select Option --</option>
                     {domainValues?.data?.map((value: any) =>
@@ -30,7 +30,7 @@ export function Form ({
                 </select>
             </div>
             <div>
-                <label for='value'>Value</label>
+                <label htmlFor='value'>Value</label>
                 <input id='value' name='value' type='text'></input>
             </div>
 
