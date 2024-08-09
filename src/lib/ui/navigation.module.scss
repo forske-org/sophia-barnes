@@ -1,0 +1,22 @@
+.container {
+    color: var(--background);
+    background: rgb(0,0,0,0.6);
+    margin-top: 1em;
+    padding: 0.4em 10dvw;
+    grid-template-columns: 1fr repeat(4, auto) 1fr;
+    grid-gap: calc(2dvw + 0.8rem);
+
+    a {
+        text-align: center;
+
+        &:hover {
+            color: rgb(184,202,219);
+        }
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .container {
+        padding: 0.4em;
+    }
+}

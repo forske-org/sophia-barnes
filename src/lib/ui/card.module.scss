@@ -1,0 +1,40 @@
+.container {
+    border-radius: 2em;
+    border: 0.01px solid rgb(0,0,0,0.1);
+    background: rgb(0,0,0,0.01);
+    padding: 1em 2em;
+    display: grid;
+}
+
+.work {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'image content';
+
+    img {
+        grid-area: image;
+    }
+
+    .content {
+        grid-area: content;
+        place-items: start stretch;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto) 1fr;
+        padding-inline: 1em;
+
+        .title {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .publisher,
+        .author {
+            font-size: 0.9em;
+        }
+
+        .type,
+        .date {
+            font-size: 0.75em;
+        }
+    }
+}

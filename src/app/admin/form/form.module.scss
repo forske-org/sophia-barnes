@@ -1,0 +1,28 @@
+.container {
+
+}
+
+.topRight {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgb(0,0,0,0);
+
+    * {
+        background: rgb(0,0,0,0);
+    }
+}
+
+.buttonSymbol {
+    outline: none;
+    border: none;
+    background: rgb(0,0,0,0);
+
+    &:hover {
+        cursor: pointer;
+
+        span {
+            color: var(--foreground) !important;
+        }
+    }
+}

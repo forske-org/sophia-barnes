@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    color: var(--foreground);
+    background-image: url('/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    * {
+        display: inherit;
+    }
+}
+
+.mask {
+    background-image: linear-gradient(rgb(255,255,255,0.5) 20%, rgb(37,37,37,0.4) 80%);
+    grid-template-rows: auto 1fr auto;
+
+    main {
+        background: rgb(255,255,255);
+        place-items: start center;
+        padding: 1em;
+    }
+}
