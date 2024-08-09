@@ -27,7 +27,8 @@ export function Form ({
         console.log(id, value)
 
         Object.keys(value).forEach((key: string) => {
-            document!.getElementById(key.toLowerCase())!.value = value[key]
+            const element = document!.getElementById(key.toLowerCase()) as HTMLInputElement
+            element!.value = value[key]
         })
     }, [ domain_values ])
 
