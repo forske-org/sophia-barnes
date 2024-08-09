@@ -1,0 +1,38 @@
+{
+  "name": "sophia-barnes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.5",
+    "@svgr/webpack": "^8.1.0",
+    "@types/mdx": "^2.0.13",
+    "fs": "^0.0.1-security",
+    "material-symbols": "^0.21.2",
+    "next": "15.0.0-rc.0",
+    "next-auth": "^5.0.0-beta.19",
+    "next-mdx-remote": "^5.0.0",
+    "react": "19.0.0-rc-f994737d14-20240522",
+    "react-dom": "19.0.0-rc-f994737d14-20240522",
+    "sass": "^1.77.8",
+    "snowflake-sdk": "^1.11.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.0-rc.0",
+    "typescript": "^5"
+  }
+}
