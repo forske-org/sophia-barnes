@@ -1,6 +1,6 @@
 export declare type Person = {
-    id: number
-    name_first: string
-    name_middle?: string
-    name_last: string
+    ID_PERSON: number
+    NAME_FIRST: string
+    NAME_MIDDLE?: string
+    NAME_LAST: string
 }

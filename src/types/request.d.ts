@@ -1,8 +1,8 @@
 export declare type Request = {
-    id: number
-    id_person: number
-    type: string
-    date: string // DATE
-    image?: string // URL
-    url?: string // URL
+    ID_REQUEST: number
+    ID_PERSON: number
+    TYPE: string
+    DATE: string // DATE
+    IMAGE?: string // URL
+    URL?: string // URL
 }

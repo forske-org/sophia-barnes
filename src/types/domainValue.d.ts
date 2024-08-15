@@ -1,6 +1,7 @@
 export declare type DomainValue = {
-    id: number
-    key: string
-    label: string
-    definition?: string
+    ID_DOMAIN_VALUE: number
+    DOMAIN: string
+    KEY: string
+    LABEL: string
+    DESCRIPTION?: string
 }

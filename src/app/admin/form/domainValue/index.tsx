@@ -2,6 +2,9 @@ import React, { Fragment, useCallback } from 'react'
 import useSWR from 'swr'
 
 import { fetcher } from '@/lib/fetcher'
+import { DomainValue } from '@/types/domainValue'
+import { CustomResponse } from '@/types/response'
+
 import Submit from './action'
 
 export function Form ({
@@ -9,7 +12,7 @@ export function Form ({
 }: {
     setForm: React.Dispatch<React.SetStateAction<string|undefined>>
 }) {
-    const { data: domain_values } = useSWR('/api/domain_value', fetcher)
+    const { data: domain_values } = useSWR<CustomResponse<DomainValue[]>>('/api/domain_value', fetcher)
 
     function handleSubmit (formData: FormData) {
         console.log('submitted')
@@ -23,13 +26,15 @@ export function Form ({
         const target = event.target as HTMLElement
         const id = target.id
 
-        const value = domain_values?.data.find((entry: any) => entry.ID_DOMAIN_VALUE == id)
+        const value = domain_values?.data.find((entry: any) => entry.ID_DOMAIN_VALUE == id) as { [key: string]: string | number }
         console.log(id, value)
 
-        Object.keys(value).forEach((key: string) => {
-            const element = document!.getElementById(key.toLowerCase()) as HTMLInputElement
-            element!.value = value[key]
-        })
+        if (value) {
+            Object.keys(value).forEach((key: string) => {
+                const element = document!.getElementById(key.toLowerCase()) as HTMLInputElement
+                element!.value = `${value[key]}`
+            })
+        }
     }, [ domain_values ])
 
     return (
@@ -37,10 +42,10 @@ export function Form ({
             <form action={handleSubmit}>
                 <div>
                     <div>
-                        {domain_values?.data.map(entry => {
+                        {domain_values?.data.map((entry: DomainValue) => {
                             return (
                                 <p key={entry.KEY}
-                                    id={entry.ID_DOMAIN_VALUE}
+                                    id={`${entry.ID_DOMAIN_VALUE}`}
                                     onClick={handleClick}>
                                     {entry.DOMAIN} - {entry.LABEL}
                                 </p>

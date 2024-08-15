@@ -3,12 +3,15 @@ import useSWR from 'swr'
 import { fetcher } from '@/lib/fetcher'
 import Submit from './action'
 
+import { CustomResponse } from '@/types/response'
+import { DomainValue } from '@/types/domainValue'
+
 export function Form ({
     setForm
 }: {
     setForm: React.Dispatch<React.SetStateAction<string|undefined>>
 }) {
-    const { data: domainValues } = useSWR('/api/domain_value', fetcher)
+    const { data: domainValues } = useSWR<CustomResponse<DomainValue[]>>('/api/domain_value', fetcher)
 
     function handleSubmit (formData: FormData) {
         console.log('submitted')
@@ -24,8 +27,10 @@ export function Form ({
                 <label htmlFor='type'>Type</label>
                 <select id='type' name='type'>
                     <option value=''>-- Select Option --</option>
-                    {domainValues?.data?.map((value: any) =>
-                        <option value={value.key} key={value.key}>{value.label}</option>
+                    {domainValues?.data?.map((value) =>
+                        <option value={value.KEY} key={value.KEY}>
+                            {value.LABEL}
+                        </option>
                     )}
                 </select>
             </div>

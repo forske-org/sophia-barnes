@@ -1,4 +1,4 @@
-import { API } from '@/lib/database/query'
+import { Query } from '@/lib/database/query'
 
 export async function DELETE (
     req: Request,
@@ -6,7 +6,7 @@ export async function DELETE (
 ) {
     const query = `DELETE FROM ${params.table} WHERE id = ${params.identifier};`
 
-    const results = await API(query)
+    const results = await Query(query)
 
     return Response.json({
         pathname: `/api/${params.table}/${params.identifier}`,
@@ -31,7 +31,7 @@ export async function PUT (
 
     const query = `UPDATE ${params.table} SET ${updates} WHERE id = ${params.identifier};`
 
-    const results = await API(query)
+    const results = await Query(query)
 
     return Response.json({
         pathname: `/api/${params.table}/${params.identifier}`,

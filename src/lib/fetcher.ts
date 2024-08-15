@@ -1,1 +1,8 @@
-export const fetcher = (...args) => fetch(...args).then(res => res.json())
+export const fetcher = async <T>(
+    input: RequestInfo | URL
+): Promise<T> => {
+    const res = await fetch(input);
+    return await res.json();
+}
+
+export default fetcher

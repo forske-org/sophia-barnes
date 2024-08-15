@@ -3,8 +3,11 @@
 import { useState, Fragment } from 'react'
 import useSWR from 'swr'
 
-import GetData from '@/lib/database/getData'
+import Fetcher from '@/lib/fetcher'
 import Submit from './action'
+
+import { Person } from '@/types/person'
+import { CustomResponse } from '@/types/response'
 
 export function Form ({
     setForm
@@ -12,7 +15,7 @@ export function Form ({
     setForm: React.Dispatch<React.SetStateAction<string|undefined>>
 }) {
     const [ newAuthor, setNewAuthor ] = useState<boolean>(false)
-    const { data: authors, error, isLoading: authorsLoading } = useSWR('/api/person', GetData)
+    const { data: authors, error, isLoading: authorsLoading } = useSWR<CustomResponse<Person[]>>('/api/person', Fetcher)
     const authorList = authors?.data ?? []
 
     function handleSubmit (formData: FormData) {
@@ -28,8 +31,10 @@ export function Form ({
             <div>
                 <label htmlFor='author'>Author</label>
                 <select id='author' name='author'>
-                    {authorList.map((author) =>
-                        <option key={author.ID_PERSON} value={author.ID_PERSON}>{author.NAME_FIRST} {author.NAME_LAST}</option>
+                    {authorList.map((author: Person) =>
+                        <option key={author.ID_PERSON} value={author.ID_PERSON}>
+                            {author.NAME_FIRST} {author.NAME_LAST}
+                        </option>
                     )}
                 </select>
             </div>

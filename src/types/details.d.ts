@@ -1,6 +1,6 @@
 export declare type Details = {
-    id: number
-    id_person: number
-    type: string
-    value: string
+    ID_DETAIL: number
+    ID_PERSON: number
+    TYPE: string
+    VALUE: string
 }

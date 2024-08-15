@@ -35,7 +35,7 @@ export async function POST (
 
     const query = `INSERT INTO ${params.table} (${fields}) VALUES (${values});`
 
-    const results = await API(query)
+    const results = await Query(query)
 
     return Response.json({
         pathname: `/api/${params.table}`,
