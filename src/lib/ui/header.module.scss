@@ -1,8 +1,17 @@
 .container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
     place-items: start stretch;
+    height: 12em;
+    background: url('/header.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 12em 12em 12em rgba(255,255,255,0.6);
 
     h1 {
-        min-height: 20dvh;
         margin-top: 0.5em;
         padding-inline: 0.5em;
         font-size: 4em;

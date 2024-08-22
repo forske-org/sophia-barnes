@@ -8,17 +8,15 @@
     --mid: rgb(150,150,150);
     --light: var(--background);
 
-    --accent-1: hsl(210, 50%, 90%);
-    --accent-2: hsl(210, 50%, 80%);
-    --accent-3: hsl(210, 50%, 70%);
-    --accent-4: hsl(210, 50%, 60%);
-    --accent-5: hsl(210, 50%, 50%);
-    --accent-6: hsl(210, 50%, 40%);
-    --accent-7: hsl(210, 50%, 30%);
-    --accent-8: hsl(210, 50%, 20%);
-    --accent-9: hsl(210, 50%, 10%);
-
-    --secondary-1: hsl(0, 100%, 100%);
+    --accent-1: rgb(217,230,242);
+    --accent-2: rgb(179,204,230);
+    --accent-3: rgb(140,179,217);
+    --accent-4: rgb(102,153,204);
+    --accent-5: rgb(64,128,191);
+    --accent-6: rgb(51,102,153);
+    --accent-7: rgb(38,77,115);
+    --accent-8: rgb(26,51,77);
+    --accent-9: rgb(13,26,38);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +32,7 @@ body {
     min-height: 100dvh;
     overflow-x: hidden;
     font-size: clamp(16px, 10vw, 16px);
+    color: var(--foreground);
 }
 
 * {
@@ -70,7 +69,7 @@ span[class^=material-symbols-] {
 }
 
 p {
-    // text-align: justify;
+    line-height: 1.8;
 }
 
 main {

@@ -13,6 +13,30 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'sydneyreviewofbooks.com',
         },
+        {
+            protocol: 'https',
+            hostname: 'i0.wp.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'www.booktopia.com.au',
+        },
+        {
+            protocol: 'https',
+            hostname: 'images.theconversation.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'res.cloudinary.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'media.springernature.com',
+        },
+        {
+            protocol: 'https',
+            hostname: 'edinburghuniversitypress.com',
+        },
     ]},
     experimental: {
         turbo: {

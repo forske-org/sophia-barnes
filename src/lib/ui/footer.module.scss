@@ -1,4 +1,8 @@
 .container {
+    height: 4em;
+    background: url('/footer.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--background);
     place-items: center;
 

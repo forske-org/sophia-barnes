@@ -15,7 +15,12 @@ export async function Card ({
     IMAGE,
     URL,
     PUBLISHER,
-}: Work) {
+    aspectRatio = '1.5:1',
+    baseSize = 100,
+}: Work & {
+    aspectRatio?: `${number}:${number}`
+    baseSize?: number
+}) {
     const jsonDate = DATE.toJSON()
     const splitDate = jsonDate.split('-')
 
@@ -27,10 +32,12 @@ export async function Card ({
             id={`${ID_WORK}`}
             href={URL ?? ''}
             target='_blank'>
-            <Image src={IMAGE ?? ''}
+            {IMAGE ? <Image src={IMAGE ?? ''}
                 alt={`${TITLE}-image`}
-                width={100}
-                height={150}/>
+                width={baseSize * parseFloat(aspectRatio.split(':').at(-1) ?? '1')}
+                height={baseSize * parseFloat(aspectRatio.split(':').at(0) ?? '1.5')}/> :
+                <div className={styles.placeholder}></div>
+            }
             <div className={styles.content}>
                 <span className={styles.title}>{TITLE}</span>
                 <span className={styles.publisher}>{PUBLISHER ?? ''}</span>

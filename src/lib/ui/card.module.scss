@@ -6,13 +6,37 @@
     display: grid;
 }
 
+.class {
+    margin: 0.5em 0;
+    gap: 0.5em;
+    place-self: center;
+    width: 80%;
+
+    h4 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+
+
 .work {
+    max-width: 100%;
+    width: 60ch;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     grid-template-areas: 'image content';
 
-    img {
+    img,
+    .placeholder {
         grid-area: image;
+    }
+
+    .placeholder {
+        width: 100px;
     }
 
     .content {

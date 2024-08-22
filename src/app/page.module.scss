@@ -1,19 +1,26 @@
 .main {
-    grid-template-columns: auto auto;
-    max-width: 90ch;
+    grid-template-columns: 1fr 1fr;
+    max-width: 120ch;
     gap: 2em;
     place-items: center;
 }
 
 .article {
-    display: flex;
-    flex-direction: column;
     gap: 1em;
-    max-width: 60ch;
+    max-width: 80ch;
     padding-inline: 1em;
+    place-self: start center;
 
-    * {
+    > p {
         display: inline-block;
+
+        &:first-child {
+            padding-top: 4em;
+        }
+
+        * {
+            display: inline;
+        }
     }
 }
 
