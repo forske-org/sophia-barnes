@@ -1,5 +1,6 @@
 import { Query } from '@/lib/database/get'
-import Card from '@/lib/ui/cardClass'
+import ClassCard from '@/lib/ui/cardClass'
+import Card from '@/lib/ui/cardWork'
 
 import { type Work } from '@/types/work'
 
@@ -37,7 +38,7 @@ export default async function Page () {
             <section className={styles.article}>
                 <p>Sophia provides the following editing services</p>
                 {SERVICES.map((item, index) =>
-                    <Card key={index} {...item} />
+                    <ClassCard key={index} {...item} />
                 )}
             </section>
             <section className={styles.article}>
