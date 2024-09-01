@@ -1,3 +1,17 @@
-preBuild:
-  commands:
-    - npm ci --legacy-peer-deps
+version: 0.1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci --legacy-peer-deps
+    build:
+      commands:
+        - NODE_ENV=production npm build:release
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: /client/www/next-build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
