@@ -2,22 +2,23 @@ import { Query } from '@/lib/database/query'
 
 export async function GET (
     req: Request,
-    { params }: { params: { table: string }}
+    { params }: { params: Promise<{ table: string }> }
 ) {
-    const query = `SELECT * FROM SOBARNES.PUBLIC.${params.table}`
-    console.log(query)
+    const { table } = await params
+
+    const query = `SELECT * FROM SOBARNES.PUBLIC.${table}`
 
     const results = await Query(query)
 
     return Response.json({
-        pathname: `/api/${params.table}`,
+        pathname: `/api/${table}`,
         data: results,
     })
 }
 
 export async function POST (
     req: Request,
-    { params }: { params: { table: string }}
+    { params }: { params: Promise<{ table: string }> }
 ) {
     let parsed: any = {}
     let fields: string = ''
@@ -33,12 +34,14 @@ export async function POST (
         values += `"${value}"`
     })
 
-    const query = `INSERT INTO SOBARNES.PUBLIC.${params.table} (${fields}) VALUES (${values});`
+    const { table } = await params
+
+    const query = `INSERT INTO SOBARNES.PUBLIC.${table} (${fields}) VALUES (${values});`
 
     const results = await Query(query)
 
     return Response.json({
-        pathname: `/api/${params.table}`,
+        pathname: `/api/${table}`,
         data: results,
     })
 }

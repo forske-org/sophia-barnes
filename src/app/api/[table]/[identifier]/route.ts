@@ -1,22 +1,40 @@
 import { Query } from '@/lib/database/query'
 
-export async function DELETE (
+export async function GET (
     req: Request,
-    { params }: { params: { table: string, identifier: string }}
+    { params }: { params: Promise<{ table: string, identifier: string }> }
 ) {
-    const query = `DELETE FROM SOBARNES.PUBLIC.${params.table} WHERE id = ${params.identifier};`
+    const { table, identifier } = await params
+
+    const query = `SELECT * FROM SOBARNES.PUBLIC.${table} WHERE id_${table} = ${identifier};`
 
     const results = await Query(query)
 
     return Response.json({
-        pathname: `/api/${params.table}/${params.identifier}`,
+        pathname: `/api/${table}/${identifier}`,
+        data: results,
+    })
+}
+
+export async function DELETE (
+    req: Request,
+    { params }: { params: Promise<{ table: string, identifier: string }> }
+) {
+    const { table, identifier } = await params
+
+    const query = `DELETE FROM SOBARNES.PUBLIC.${table} WHERE id_${table} = ${identifier};`
+
+    const results = await Query(query)
+
+    return Response.json({
+        pathname: `/api/${table}/${identifier}`,
         data: results,
     })
 }
 
 export async function PUT (
     req: Request,
-    { params }: { params: { table: string, identifier: string }}
+    { params }: { params: Promise<{ table: string, identifier: string }> }
 ) {
     let parsed: any = {}
     let updates: string = ''
@@ -29,14 +47,16 @@ export async function PUT (
         updates += `${key} = "${value}"`
     })
 
-    const query = `UPDATE SOBARNES.PUBLIC.${params.table} SET ${updates} WHERE id = ${params.identifier};`
+    const { table, identifier } = await params
+
+    const query = `UPDATE SOBARNES.PUBLIC.${table} SET ${updates} WHERE id_${table} = ${identifier};`
 
     const results = await Query(query)
 
     return Response.json({
-        pathname: `/api/${params.table}/${params.identifier}`,
-        data: parsed,
-        query: query,
+        pathname: `/api/${table}/${identifier}`,
+        // data: parsed,
+        // query: query,
         results: results,
     })
 }
