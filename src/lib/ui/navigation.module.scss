@@ -1,4 +1,8 @@
 .container {
+    position: fixed;
+    top: 9em;
+    left: 0;
+    right: 0;
     color: var(--background);
     background: rgb(0,0,0,0.6);
     margin-top: 1em;

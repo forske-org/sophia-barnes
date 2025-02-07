@@ -6,6 +6,12 @@
     display: grid;
 }
 
+@media only screen and (max-width: 720px) {
+    .container {
+        padding: 1em;
+    }
+}
+
 .class {
     margin: 0.5em 0;
     gap: 0.5em;
@@ -24,8 +30,8 @@
 
 
 .work {
-    max-width: 100%;
-    width: 60ch;
+    max-width: minmax(60ch, 100%);
+    // width: 60ch;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     grid-template-areas: 'image content';

@@ -4,7 +4,7 @@ export async function GET (
     req: Request,
     { params }: { params: { table: string }}
 ) {
-    const query = `SELECT * FROM ${params.table}`
+    const query = `SELECT * FROM SOBARNES.PUBLIC.${params.table}`
     console.log(query)
 
     const results = await Query(query)
@@ -33,7 +33,7 @@ export async function POST (
         values += `"${value}"`
     })
 
-    const query = `INSERT INTO ${params.table} (${fields}) VALUES (${values});`
+    const query = `INSERT INTO SOBARNES.PUBLIC.${params.table} (${fields}) VALUES (${values});`
 
     const results = await Query(query)
 

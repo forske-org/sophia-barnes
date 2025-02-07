@@ -4,7 +4,7 @@ export async function DELETE (
     req: Request,
     { params }: { params: { table: string, identifier: string }}
 ) {
-    const query = `DELETE FROM ${params.table} WHERE id = ${params.identifier};`
+    const query = `DELETE FROM SOBARNES.PUBLIC.${params.table} WHERE id = ${params.identifier};`
 
     const results = await Query(query)
 
@@ -29,7 +29,7 @@ export async function PUT (
         updates += `${key} = "${value}"`
     })
 
-    const query = `UPDATE ${params.table} SET ${updates} WHERE id = ${params.identifier};`
+    const query = `UPDATE SOBARNES.PUBLIC.${params.table} SET ${updates} WHERE id = ${params.identifier};`
 
     const results = await Query(query)
 

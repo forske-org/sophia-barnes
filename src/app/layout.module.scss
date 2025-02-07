@@ -15,7 +15,8 @@
 
     main {
         min-height: calc(100dvh - 4em);
+        max-width: 100dvw;
         place-items: start center;
-        padding: 14em 1em 1em 1em;
+        padding: 12em 1em 1em 1em;
     }
 }

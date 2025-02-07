@@ -6,7 +6,7 @@ import { API } from '@/lib/database/get'
 import styles from './page.module.scss'
 
 export default async function Page () {
-    const data = await API('SELECT * FROM detail WHERE id_person = 1;')
+    const data = await API('SELECT * FROM SOBARNES.PUBLIC.DETAIL WHERE ID_PERSON = 1;')
     const biography = data.find((element: any) => element.TYPE === 'bio')
 
     return (

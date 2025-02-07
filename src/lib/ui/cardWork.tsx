@@ -24,7 +24,7 @@ export async function Card ({
     const jsonDate = DATE.toJSON()
     const splitDate = jsonDate.split('-')
 
-    let author = await API(`SELECT * FROM person WHERE id_person = '${ID_PERSON}';`)
+    let author = await API(`SELECT * FROM SOBARNES.PUBLIC.PERSON WHERE id_person = '${ID_PERSON}';`)
     author = author.at(0)
 
     return (

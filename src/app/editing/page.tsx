@@ -30,7 +30,7 @@ const SERVICES = [
 ]
 
 export default async function Page () {
-    const data = await Query(`SELECT * FROM work WHERE id_person != 1;`) as Work[]
+    const data = await Query(`SELECT * FROM SOBARNES.PUBLIC.WORK WHERE id_person != 1;`) as Work[]
     const editing = data.sort((a,b) => b.DATE.getTime() - a.DATE.getTime())
 
     return (
