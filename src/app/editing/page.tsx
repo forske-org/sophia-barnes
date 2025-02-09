@@ -13,19 +13,15 @@ export const metadata = {
 const SERVICES = [
     {
         title: 'Manuscript Assessment',
-        description: 'A review of your work which evaluates the strengths and weaknesses of your manuscript, as well as its market potential.',
+        description: `A close reading of and full report on your manuscript's strengths and areas for development, as well as its market potential.`,
     },
     {
         title: 'Structural Edit',
-        description: '',
-    },
-    {
-        title: 'Line Edit',
-        description: '',
+        description: `A comprehensive review of your manuscript's content, structure, language and presentation, including targeted edits and guidance.`,
     },
     {
         title: 'Copy Edit',
-        description: '',
+        description: `A closer edit of the manuscript's prose, focusing on language, grammar, punctuation and style.`,
     },
 ]
 
@@ -41,10 +37,10 @@ export default async function Page () {
                     <ClassCard key={index} {...item} />
                 )}
             </section>
-            <section className={styles.article}>
-                {editing.length > 0 ? <h4>Edited Works</h4> : null}
+            {editing.length > 0 ? <section className={styles.article}>
+                <h4>Edited Works</h4>
                 {editing?.map((work: Work) => <Card key={work.ID_WORK} {...work}/>)}
-            </section>
+            </section> : null}
         </div>
     )
 }
