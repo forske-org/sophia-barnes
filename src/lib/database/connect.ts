@@ -15,12 +15,21 @@
 // )
 
 import snowflake from 'snowflake-sdk'
+import crypto from 'crypto'
 
 export const db = snowflake.createPool({
     account: process.env.SNOWFLAKE_ACCOUNT!,
     warehouse: process.env.SNOWFLAKE_WAREHOUSE!,
     username: process.env.SNOWFLAKE_USERNAME!,
-    password: process.env.SNOWFLAKE_PASSWORD!,
+    // password: process.env.SNOWFLAKE_PASSWORD!,
+    privateKey: crypto.createPrivateKey({
+        key: process.env.SNOWFLAKE_PRIVATE_KEY!,
+        format: 'pem',
+    }).export({
+        format: 'pem',
+        type: 'pkcs8',
+    }).toString(),
+    authenticator: "SNOWFLAKE_JWT",
     role: process.env.SNOWFLAKE_ROLE!,
     database: process.env.SNOWFLAKE_DATABASE!,
 }, {
