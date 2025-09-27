@@ -23,7 +23,7 @@ export const db = snowflake.createPool({
     username: process.env.SNOWFLAKE_USERNAME!,
     // password: process.env.SNOWFLAKE_PASSWORD!,
     privateKey: crypto.createPrivateKey({
-        key: process.env.SNOWFLAKE_PRIVATE_KEY!,
+        key: process.env.SNOWFLAKE_PRIVATE_KEY!.replaceAll('\\n', '\n'),
         format: 'pem',
     }).export({
         format: 'pem',
