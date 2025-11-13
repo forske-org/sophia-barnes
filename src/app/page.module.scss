@@ -3,6 +3,7 @@
     max-width: 120ch;
     gap: 2em;
     place-items: center;
+    min-height: calc(100dvh - 20em);
 }
 
 .article {
@@ -10,6 +11,7 @@
     max-width: 80ch;
     padding-inline: 1em;
     place-self: start center;
+    display: grid;
 
     > p {
         display: inline-block;
@@ -36,5 +38,44 @@
 
     .profileImage {
         display: none;
+    }
+}
+
+.form {
+    display: grid;
+    gap: 1em;
+    background-color: rgb(0,0,0,0.02);
+    border-radius: 1em;
+    padding: 2em 4em;
+    place-self: center;
+    
+    p {
+        margin: 2em 0;
+    }
+
+    input,
+    textarea {
+        min-height: 2em;
+        border-radius: 1em;
+        padding: 0.5em 1em;
+        border: 1px solid rgb(0,0,0,0.1);
+        font: inherit;
+        font-size: 0.9em;
+    }
+
+    button {
+        font: inherit;
+        font-size: 0.9em;
+        padding: 0.5em 1em;
+        width: 20ch;
+        place-self: center;
+        border-radius: 1em;
+        border: 1px solid rgb(0,0,0,0.1);
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.5);
+            color: rgb(255,255,255);
+        }
     }
 }

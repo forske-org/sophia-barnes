@@ -18,6 +18,7 @@ export default async function Page () {
         <div className={styles.main}>
             <section className={styles.article}>
                 <p>Sophia's short fiction has appeared in <i>Kill Your Darlings</i>, <i>Seizure Online</i>, <i>Inktears</i>, <i>Wet Ink Magazine</i> and the collection <i>Stories of Sydney</i>. Her stories have been shortlisted for the <i>Wet Ink</i> / CAL Short Story Prize, the FAW Angelo B Natali Short Story Award and the Newcastle Short Story Award.</p>
+                <p>She is currently working on her first novel.</p>
             </section>
             <section className={styles.article}>
                 {novels.length > 0 ? <h4>Novels</h4> : null}
