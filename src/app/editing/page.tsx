@@ -1,10 +1,13 @@
 import { Query } from '@/lib/database/get'
 import ClassCard from '@/lib/ui/cardClass'
 import Card from '@/lib/ui/cardWork'
+import ContactForm from '@/lib/ui/contactForm'
 
 import { type Work } from '@/types/work'
 
 import styles from '../page.module.scss'
+
+import { sendMail } from '@/lib/msGraph'
 
 export const metadata = {
     title: 'Editing',
@@ -32,7 +35,7 @@ export default async function Page () {
     return (
         <div className={styles.main}>
             <section className={styles.article}>
-                <p>Sophia provides the following editing services</p>
+                <p>Sophia provides the following editing services:</p>
                 {SERVICES.map((item, index) =>
                     <ClassCard key={index} {...item} />
                 )}
@@ -41,6 +44,11 @@ export default async function Page () {
                 <h4>Edited Works</h4>
                 {editing?.map((work: Work) => <Card key={work.ID_WORK} {...work}/>)}
             </section> : null}
+            <section className={styles.article} style={{
+                minHeight: '75%',
+            }}>
+                <ContactForm />
+            </section>
         </div>
     )
 }

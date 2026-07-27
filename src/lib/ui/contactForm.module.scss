@@ -1,0 +1,39 @@
+.form {
+  display: grid;
+  gap: 1em;
+  background-color: var(--accent-05);
+  border-radius: 1em;
+  padding: 2em 4em;
+  margin: 2em 0;
+  place-self: center;
+  
+  p {
+      margin: 2em 0;
+  }
+
+  input,
+  textarea {
+      min-height: 2em;
+      border-radius: 1em;
+      padding: 0.5em 1em;
+      border: 1px solid rgb(0,0,0,0.1);
+      font: inherit;
+      font-size: 0.9em;
+  }
+
+  button {
+      font: inherit;
+      font-size: 0.9em;
+      padding: 0.5em 1em;
+      width: minmax(20ch, 100%);
+      place-self: center;
+      border-radius: 1em;
+      border: 1px solid rgb(0,0,0,0.1);
+
+      &:hover {
+          cursor: pointer;
+          background-color: rgb(0,0,0,0.5);
+          color: rgb(255,255,255);
+      }
+  }
+}

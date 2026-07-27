@@ -3,7 +3,7 @@
     top: 9em;
     left: 0;
     right: 0;
-    color: var(--background);
+    color: var(--light);
     background: rgb(0,0,0,0.6);
     margin-top: 1em;
     padding: 0.4em 10dvw;
@@ -14,7 +14,7 @@
         text-align: center;
 
         &:hover {
-            color: rgb(184,202,219);
+            color: var(--accent-3);
         }
     }
 }
