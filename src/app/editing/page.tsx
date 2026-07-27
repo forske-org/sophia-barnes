@@ -7,7 +7,6 @@ import { type Work } from '@/types/work'
 
 import styles from '../page.module.scss'
 
-import { sendMail } from '@/lib/msGraph'
 
 export const metadata = {
     title: 'Editing',
@@ -40,7 +39,7 @@ export default async function Page () {
                     <ClassCard key={index} {...item} />
                 )}
             </section>
-            {editing.length > 0 ? <section className={styles.article}>
+            {editing?.length > 0 ? <section className={styles.article}>
                 <h4>Edited Works</h4>
                 {editing?.map((work: Work) => <Card key={work.ID_WORK} {...work}/>)}
             </section> : null}
