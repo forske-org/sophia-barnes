@@ -16,26 +16,31 @@
     "@types/mdx": "^2.0.13",
     "fs": "^0.0.1-security",
     "material-symbols": "^0.21.3",
-    "next": "^15.1.6",
+    "next": "^9.3.3",
     "next-auth": "^5.0.0-beta.25",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.84.0",
-    "snowflake-sdk": "^1.15.0",
+    "snowflake-sdk": "^3.1.0",
     "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7",
+    "sqlite3": "^6.0.1",
     "swr": "^2.3.2"
   },
   "devDependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.7.3",
+    "@aws-amplify/backend": "^1.8.0",
+    "@aws-amplify/backend-cli": "^1.8.3",
     "@azure/identity": "^4.13.0",
-    "@azure/msal-node": "^3.8.0",
+    "@azure/msal-node": "^5.4.3",
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "@types/node": "^20.17.17",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "eslint": "^8.57.1",
+    "aws-cdk": "^2.1133.0",
+    "aws-cdk-lib": "^2.262.1",
+    "eslint": "^10.8.0",
     "eslint-config-next": "^0.2.4",
-    "typescript": "^5.7.3"
+    "typescript": "^5.9.3"
   }
 }
