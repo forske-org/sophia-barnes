@@ -39,4 +39,5 @@ next-env.d.ts
 snowflake.log
 
 # Lock files
+*-lock.json
 *.lock.json
